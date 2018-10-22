@@ -12,7 +12,7 @@ export class AuthService {
     clientID: 'Qnu--PquijnwVGjT8MQUg3jcdyu0ivE3',
     domain: 'yetube.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'http://localhost:4200/callback',
+    redirectUri: 'http://localhost:4200/authorize',
     scope: 'openid'
   });
   constructor(public router: Router) { }
