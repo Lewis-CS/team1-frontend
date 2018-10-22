@@ -9,10 +9,10 @@ import * as auth0 from 'auth0-js';
 })
 export class AuthService {
   auth0 = new auth0.WebAuth({
-    clientID: 'insert_client_id',
-    domain: 'insert_domain',
+    clientID: 'Qnu--PquijnwVGjT8MQUg3jcdyu0ivE3',
+    domain: 'yetube.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'http://localhost:3000/callback',
+    redirectUri: 'http://localhost:4200/callback',
     scope: 'openid'
   });
   constructor(public router: Router) { }
