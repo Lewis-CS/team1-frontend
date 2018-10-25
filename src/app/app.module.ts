@@ -3,12 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthorizeComponent } from './authorize/authorize.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { AuthorizeComponent } from './components/authorize/authorize.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthorizeComponent
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+	AuthorizeComponent
   ],
   imports: [
     BrowserModule,
