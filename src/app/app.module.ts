@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { AuthorizeComponent } from './components/authorize/authorize.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AuthorizeComponent } from './components/authorize/authorize.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-	AuthorizeComponent
+	AuthorizeComponent,
+	MainComponent
   ],
   imports: [
     BrowserModule,
