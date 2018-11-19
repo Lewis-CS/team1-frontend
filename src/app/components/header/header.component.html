@@ -1,8 +1,20 @@
-<nav class="navbar is-dark">
-  <!-- logo -->
-  <div class="navbar-brand">
-    <a class="navbar-item">
-      <img style="width:200px; height:auto;" src = "assets/images/YeTube_Logo.png">
-    </a>
-  </div>
-</nav>
+<div class="header">
+  <div class="container grid bsb">  
+    <img class="r0 c0" style="width:auto; height:24px;" src = "assets/images/YeTube_Logo.png"/>
+      <div class="search r0 c1 jc ac">
+        <form>
+          <div class="grid rsb">  
+	    <input class="r0 c0" type="text"/>
+            <button class="r0 c1">Search</button>
+          </div>  
+        </form>
+      </div>
+      <div style="white-space: nowrap;" class="r0 c2 ac">
+        <button class="header-btn" *ngIf="!auth.isAuthenticated()"
+        (click)="auth.login()">Login</button>
+	<button class="header-btn" *ngIf="auth.isAuthenticated()">My Account</button>
+        <button class="header-btn" *ngIf="auth.isAuthenticated()" (click)="auth.logout()">Logout</button>
+	<!--<button class="header-btn">Register</button>-->
+      </div>
+    </div>
+</div>

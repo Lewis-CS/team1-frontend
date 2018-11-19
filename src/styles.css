@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  margin:0px;
+  background-color:#efefef;
+}
+
+.container{
+  width:1024px;
+  margin:0px auto;
+}
+
+/*CSS Grid Boilerplate*/
+/*Defaults*/
+.grid{ display:grid; display:-ms-grid;}
+
+.grid.cc1{ grid-template-columns:1fr; -ms-grid-columns:1fr; }
+.grid.cc2{ grid-template-columns:1fr 1fr; -ms-grid-columns:1fr 1fr; }
+.grid.cc3{ grid-template-columns:1fr 1fr 1fr; -ms-grid-columns:1fr 1fr 1fr; }
+.grid.cc4{ grid-template-columns:1fr 1fr 1fr 1fr; -ms-grid-columns:1fr 1fr 1fr 1fr; }
+.grid.cc5{ grid-template-columns:1fr 1fr 1fr 1fr 1fr; -ms-grid-columns:1fr 1fr 1fr 1fr 1fr; }
+
+.grid.rc1{ grid-template-rows:auto; -ms-grid-rows:auto; }
+.grid.rc2{ grid-template-rows:auto auto; -ms-grid-rows:auto auto; }
+.grid.rc3{ grid-template-rows:auto auto auto; -ms-grid-rows:auto auto auto; }
+.grid.rc4{ grid-template-rows:auto auto auto auto; -ms-grid-rows:auto auto auto auto; }
+.grid.rc5{ grid-template-rows:auto auto auto auto auto; -ms-grid-rows:auto auto auto auto auto; }
+
+.c0{ grid-column-start:1; -ms-grid-column:1; }
+.c1{ grid-column-start:2; -ms-grid-column:2; }
+.c2{ grid-column-start:3; -ms-grid-column:3; }
+.c3{ grid-column-start:4; -ms-grid-column:4; }
+.c4{ grid-column-start:5; -ms-grid-column:5; }
+
+.r0{ grid-row-start:1; -ms-grid-row:1; }
+.r1{ grid-row-start:2; -ms-grid-row:2; }
+.r2{ grid-row-start:3; -ms-grid-row:3; }
+.r3{ grid-row-start:4; -ms-grid-row:4; }
+.r4{ grid-row-start:5; -ms-grid-row:5; }
+
+.w1{ grid-column-end:span 1; -ms-grid-column-span:1; }
+.w2{ grid-column-end:span 2; -ms-grid-column-span:2; }
+.w3{ grid-column-end:span 3; -ms-grid-column-span:3; }
+.w4{ grid-column-end:span 4; -ms-grid-column-span:4; }
+.w5{ grid-column-end:span 5; -ms-grid-column-span:5; }
+
+.h1{ grid-row-end:span 1; -ms-grid-row-span:1; }
+.h2{ grid-row-end:span 2; -ms-grid-row-span:2; }
+.h3{ grid-row-end:span 3; -ms-grid-row-span:3; }
+.h4{ grid-row-end:span 4; -ms-grid-row-span:4; }
+.h5{ grid-row-end:span 5; -ms-grid-row-span:5; }
+
+.jl{ justify-self:start; -ms-grid-column-align:start; }
+.jc{ justify-self:center; -ms-grid-column-align:center; }
+.jr{ justify-self:end; -ms-grid-column-align:end; }
+.js{ justify-self:stretch; -ms-grid-column-align:stretch; }
+.at{ align-self:start; -ms-grid-row-align:start; }
+.ac{ align-self:center; -ms-grid-row-align:center; }
+.ab{ align-self:end; -ms-grid-row-align:end; }
+.as{ align-self:stretch; -ms-grid-row-align:stretch; }
+
+/*Quick Templates*/
+.grid.lsb{
+  grid-template-columns:min-content 1fr; -ms-grid-columns:min-content 1fr;
+  grid-template-rows:auto; -ms-grid-rows:auto; 
+}
+.grid.rsb{
+  grid-template-columns:1fr min-content; -ms-grid-columns:1fr min-content;
+  grid-template-rows:auto; -ms-grid-rows:auto; 
+}
+.grid.bsb{
+  grid-template-columns:min-content 1fr min-content; -ms-grid-columns:min-content 1fr min-content;
+  grid-template-rows:auto; -ms-grid-rows:auto; 
+}

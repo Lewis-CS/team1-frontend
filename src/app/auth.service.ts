@@ -12,7 +12,7 @@ export class AuthService {
     clientID: 'Qnu--PquijnwVGjT8MQUg3jcdyu0ivE3',
     domain: 'yetube.auth0.com',
     responseType: 'token id_token',
-    redirectUri: 'http://localhost:4200/authorize',
+    redirectUri: 'http://142.93.122.253:4200/authorize',
     scope: 'openid'
   });
   constructor(public router: Router) { }
@@ -46,7 +46,8 @@ export class AuthService {
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
     // Go back to the home route
-    this.router.navigate(['/']);
+    this.auth0.logout({returnTo: 'http://142.93.122.253:4200/'});
+    //this.router.navigate(['/']);
   }
 
   public isAuthenticated(): boolean {

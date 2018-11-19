@@ -1,0 +1,22 @@
+.header{
+  background-color:#fff;
+  border-bottom:1px solid #ddd;
+  padding:12px;
+}
+.header > img {
+  display:block;
+}
+
+.header-btn{
+  margin-left:12px;
+  background:none;
+  outline:none;
+  border:0;
+  cursor:pointer;
+  color:#38B0DE;
+  font-weight:bold;
+}
+.search{
+  width:80%;
+  background-color:gray;
+}
