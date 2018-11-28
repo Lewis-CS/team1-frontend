@@ -1,1 +1,43 @@
-<h1 class = "title is-bold">Home</h1>
+<div class="container">
+  <div class="strip">
+    <div class="strip-title">
+      <span>Top Rated</span>
+    </div>
+    <div class="strip-videos" *ngIf="data.most_viewed">
+      <div *ngFor="let vid of data.most_viewed">
+        <img class="strip-videos-thumb" src="{{ vid.thumb }}">
+        <div class="strip-videos-title">{{ vid.title }}</div>
+        <div class="strip-videos-creator">{{ vid.creator }}</div>
+        <div class="strip-videos-views">{{ vid.views }} views</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="strip-title">
+      <span>Most Viewed</span>
+    </div>
+    <div class="strip-videos" *ngIf="data.most_viewed">
+      <div *ngFor="let vid of data.most_viewed">
+        <img class="strip-videos-thumb" src="{{ vid.thumb }}">
+        <div class="strip-videos-title">{{ vid.title }}</div>
+        <div class="strip-videos-creator">{{ vid.creator }}</div>
+        <div class="strip-videos-views">{{ vid.views }} views</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="strip-title">
+      <span>Newly Added</span>
+    </div>
+    <div class="strip-videos" *ngIf="data.most_viewed">
+      <div *ngFor="let vid of data.most_viewed">
+        <img class="strip-videos-thumb" src="{{ vid.thumb }}">
+        <div class="strip-videos-title">{{ vid.title }}</div>
+        <div class="strip-videos-creator">{{ vid.creator }}</div>
+        <div class="strip-videos-views">{{ vid.views }} views</div>
+      </div>
+    </div>
+  </div>
+</div>
