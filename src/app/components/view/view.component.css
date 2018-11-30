@@ -1,0 +1,34 @@
+video {
+  width:100%;
+}
+.right-col{
+  padding-left:24px;
+  padding-top:24px;
+}
+.left-col{
+  padding-top:24px;
+}
+.video-holder{
+  margin-bottom:6px;
+}
+.video-title{
+  font-size:1.1em;
+}
+
+.recommended-title{
+  font-size:1.1em;
+  padding-bottom:4px;
+}
+
+.recommended-video{
+  margin-bottom:10px;
+}
+.recommended-video-title{
+  font-size:0.8em;
+  font-weight:bold;
+  padding-bottom:6px;
+}
+.recommended-video-creator, .recommended-video-views{
+  font-size:0.8em;
+  color:#555;
+}

@@ -4,10 +4,10 @@
       <span>Top Rated</span>
     </div>
     <div class="strip-videos" *ngIf="data.most_viewed">
-      <div *ngFor="let vid of data.most_viewed">
+      <div *ngFor="let vid of data.most_viewed" routerLink="/view/32">
         <img class="strip-videos-thumb" src="{{ vid.thumb }}">
         <div class="strip-videos-title">{{ vid.title }}</div>
-        <div class="strip-videos-creator">{{ vid.creator }}</div>
+        <div class="strip-videos-creator" routerLink="/view/44">{{ vid.creator }}</div>
         <div class="strip-videos-views">{{ vid.views }} views</div>
       </div>
     </div>
