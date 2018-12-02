@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthorizeComponent } from './components/authorize/authorize.component';
 import { MainComponent } from './components/main/main.component';
 import { ViewComponent } from './components/view/view.component';
+import { UploadComponent } from './components/upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { ViewComponent } from './components/view/view.component';
     HomeComponent,
 	AuthorizeComponent,
 	MainComponent,
-	ViewComponent
+	ViewComponent,
+	UploadComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

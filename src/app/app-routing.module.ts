@@ -4,12 +4,14 @@ import { AuthorizeComponent } from './components/authorize/authorize.component';
 import { HomeComponent } from './components/home/home.component';
 import { MainComponent } from './components/main/main.component';
 import { ViewComponent } from './components/view/view.component';
+import { UploadComponent } from './components/upload/upload.component';
 
 const routes: Routes = [
   {path:'', component: MainComponent,
     children: [
       { path: '', component:HomeComponent },
-      { path: 'view/:id', component:ViewComponent }
+      { path: 'view/:id', component:ViewComponent },
+      { path: 'upload', component:UploadComponent }
     ]
   },
   {path:'authorize', component: AuthorizeComponent },
