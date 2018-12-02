@@ -1,0 +1,9 @@
+<div class="container">
+  <form #uploadForm="ngForm" (ngSubmit)="onSubmit(uploadForm)">
+    <input type="file" ngModel required (change)="onVideo($event.target.files)" name="videoFile" accept=".mp4">
+    <input type="file" ngModel required (change)="onThumb($event.target.files)" name="thumbFile" accept=".jpg,.jpeg,.png">
+    <input type="text" ngModel required name="videoTitle">
+    <textarea ngModel name="videoDescription"></textarea>
+    <button type="submit">Upload</button>
+  </form>
+</div>
