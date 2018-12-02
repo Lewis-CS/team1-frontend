@@ -1,21 +1,21 @@
 <div class="container">
   <div class="grid rsb">
-    <div class="r0 c0 left-col">
+    <div class="r0 c0 left-col" *ngIf="video">
       <video class="video-holder" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        <source src="http://yetube.dockedfiles.com/uploads/videos/{{video.video_src}}" type="video/mp4">
         Your browser does not support HTML5 video.
       </video>
-      <div class="video-title">Bunny and the Butterfly</div>
+      <div class="video-title">{{ video.title }}</div>
     </div>
     <div class="r0 c1 right-col">
       <div class="recommended-title">Recommended</div>
       <div class="recommended-videos">
-        <div *ngFor="let vid of recommended.most_viewed" class="grid lsb recommended-video">
-          <img class="r0 c0" style="height:94px; width:auto;"  src="https://i.ytimg.com/vi/JIwkF80xBoI/maxresdefault.jpg"/>
+        <div *ngFor="let vid of recommended" class="grid lsb recommended-video">
+          <img class="r0 c0" style="height:94px; width:auto;"  src="http://yetube.dockedfiles.com/uploads/thumbs/{{ vid.thumb_src }}"/>
           <div class="r0 c1" style="width:202px; padding-left:10px;">
             <div class="recommended-video-title">{{ vid.title}}</div>
-            <div class="recommended-video-creator">{{ vid.creator }}</div>
-            <div class="recommended-video-views">{{ vid.views}} views</div>
+            <div class="recommended-video-creator">{{ vid.user_id }}</div>
+            <div class="recommended-video-views">{{ vid.views }} views</div>
           </div>
         </div>
       </div>

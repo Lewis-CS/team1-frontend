@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -41,9 +41,13 @@ export class VideoService {
     ]
   };
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+  
+  getVideo(id): Observable<Object>{
+    return this.http.get('http://yetube.dockedfiles.com/videos/' + id);
+  }
 
   getTop5s(): Observable<Object> {
-    return of(this.top5);
+    return this.http.get('http://yetube.dockedfiles.com/videos');
   }
 }
