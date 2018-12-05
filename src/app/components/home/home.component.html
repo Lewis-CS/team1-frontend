@@ -5,9 +5,9 @@
     </div>
     <div class="strip-videos" *ngIf="data">
       <div *ngFor="let vid of data" class="{{vid.video_id}}" [routerLink]="['view', vid.video_id]">
-        <img class="strip-videos-thumb" src="http://yetube.dockedfiles.com/uploads/thumbs/{{ vid.thumb_src }}">
+        <img class="strip-videos-thumb" src="http://yetube.dockedfiles.com:8080/uploads/thumbs/{{ vid.thumb_src }}">
         <div class="strip-videos-title">{{ vid.title }}</div>
-        <div class="strip-videos-creator" routerLink="/view/{{data.video_id}}">{{ vid.user_id }}</div>
+        <div class="strip-videos-creator" routerLink="/view/{{data.video_id}}">{{ vid.username }}</div>
         <div class="strip-videos-views">{{ vid.views }} views</div>
       </div>
     </div>
@@ -19,9 +19,9 @@
     </div>
     <div class="strip-videos" *ngIf="data">
       <div *ngFor="let vid of data">
-        <img class="strip-videos-thumb" src="http://yetube.dockedfiles.com/uploads/thumbs/{{ vid.thumb_src }}">
+        <img class="strip-videos-thumb" src="http://yetube.dockedfiles.com:8080/uploads/thumbs/{{ vid.thumb_src }}">
         <div class="strip-videos-title">{{ vid.title }}</div>
-        <div class="strip-videos-creator">{{ vid.user_id }}</div>
+        <div class="strip-videos-creator">{{ vid.username }}</div>
         <div class="strip-videos-views">{{ vid.views }} views</div>
       </div>
     </div>
@@ -33,9 +33,9 @@
     </div>
     <div class="strip-videos" *ngIf="data">
       <div *ngFor="let vid of data">
-        <img class="strip-videos-thumb" src="http://yetube.dockedfiles.com/uploads/thumbs/{{ vid.thumb_src }}">
+        <img class="strip-videos-thumb" src="http://yetube.dockedfiles.com:8080/uploads/thumbs/{{ vid.thumb_src }}">
         <div class="strip-videos-title">{{ vid.title }}</div>
-        <div class="strip-videos-creator">{{ vid.user_id }}</div>
+        <div class="strip-videos-creator">{{ vid.username }}</div>
         <div class="strip-videos-views">{{ vid.views }} views</div>
       </div>
     </div>
