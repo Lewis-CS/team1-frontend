@@ -14,7 +14,80 @@ video {
 .video-title{
   font-size:1.1em;
 }
+.video-view-rate{
+  color:#777;
+  height:40px;
+  line-height:40px;
+  border-bottom:1px solid #ddd;
+}
+.video-rate{
+  float:right;
+}
+.video-rate button{
+  background-color:transparent;
+  border:none;
+  outline:none;
+  color:#777;
+  cursor:pointer;
+}
+.video-rate button i{
+  font-size:1.2em;
+  padding-right:10px;
+}
 
+
+.video-info{
+  padding:1em 0em;
+  border-bottom:1px solid #ddd;
+}
+
+.video-comments{
+  padding:1em 0em;
+}
+.comment-input{
+  display:block;
+  width:100%;
+  border:none;
+  outline:none;
+  background-color:transparent;
+  border-bottom:2px solid #555;
+  padding:4px 0px;
+  margin-bottom:1em;
+}
+.comment-submit{
+  float:right;
+  color:#fff;
+  padding:0.5em;
+  background-color:#38B0DE;
+  border:none;
+  border-radius:3px;
+  cursor:pointer;
+}
+.comment-terms{
+  color:#555;
+  font-size:0.8em;
+}
+.avatar{
+  margin-right:10px;
+}
+.avatar img{
+  border-radius:20px;
+}
+
+.video-info-user{
+  line-height:1.3em;
+  font-weight:bold;
+  font-size:0.9em;
+}
+.video-info-date{
+  line-height:1.3em;
+  color:#555;
+  font-size:0.8em;
+}
+.video-info-desc{
+  padding-top:1.5em;
+  font-size:0.9em;
+}
 .recommended-title{
   font-size:1.1em;
   padding-bottom:4px;

@@ -2,19 +2,58 @@
   <div class="grid rsb">
     <div class="r0 c0 left-col" *ngIf="video">
       <video class="video-holder" controls="">
-        <source src="http://yetube.dockedfiles.com/uploads/videos/{{video.video_src}}" type="video/mp4">
+        <source src="http://yetube.dockedfiles.com:8080/uploads/videos/{{video.video_src}}" type="video/mp4">
         Your browser does not support HTML5 video.
       </video>
       <div class="video-title">{{ video.title }}</div>
+      <div class="video-view-rate">
+        <span>{{ video.views }} views</span>
+        <div class="video-rate">
+          <button [disabled]="!auth.isAuthenticated()" (click)="rateVideo(1)"><i class="fas fa-thumbs-up"></i>{{ video.likes }}</button>
+          <button [disabled]="!auth.isAuthenticated()" (click)="rateVideo(0)"><i class="fas fa-thumbs-down"></i>{{ video.total - video.likes }}</button>
+        </div>
+      </div>
+      <div class="video-info grid bsb">
+        <div class="avatar r0 c0">
+          <img alt="Andrew Smith's Avatar" class="avatar" height="40" src="https://secure.gravatar.com/avatar/fbedf600a97738a45fa8ed1e12678e2a?s=40&amp;d=" width="40">
+        </div>
+        <div class="r0 c1">
+          <div class="video-info-user">{{video.username}}</div>
+          <div class="video-info-date">Published on Aug 14, 2007</div>
+          <div class="video-info-desc">{{video.description}}</div>
+        </div>
+      </div>
+      <div class="video-comments">
+        <div *ngIf="auth.isAuthenticated()" class="grid lsb">
+          <div class="avatar r0 c0">
+            <img alt="Andrew Smith's Avatar" class="avatar" height="40" src="https://secure.gravatar.com/avatar/fbedf600a97738a45fa8ed1e12678e2a?s=40&amp;d=" width="40">
+          </div>
+          <div class="r0 c1">
+            <form #commentForm="ngForm" (ngSubmit)="onComment(commentForm)" autocomplete="off" class="post-comment">
+              <!--<input autocomplete="false" name="hidden" type="text" style="display:none;">-->
+              <input class="comment-input" ngModel required type="text" name="comment" placeholder="Enter your comment">
+              <div>
+                <span class="comment-terms">By doing this action you agree to our Terms of Service</span>
+                <button class="comment-submit" type="submit">Comment</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div *ngIf="commentss">
+        <div *ngFor="let comment of commentss">
+	  {{ comment.comment }}
+        </div>
+        </div>
+      </div>
     </div>
     <div class="r0 c1 right-col">
       <div class="recommended-title">Recommended</div>
       <div class="recommended-videos">
         <div *ngFor="let vid of recommended" class="grid lsb recommended-video">
-          <img class="r0 c0" style="height:94px; width:auto;"  src="http://yetube.dockedfiles.com/uploads/thumbs/{{ vid.thumb_src }}"/>
+          <img class="r0 c0" style="height:94px; width:auto;"  src="http://yetube.dockedfiles.com:8080/uploads/thumbs/{{ vid.thumb_src }}"/>
           <div class="r0 c1" style="width:202px; padding-left:10px;">
             <div class="recommended-video-title">{{ vid.title}}</div>
-            <div class="recommended-video-creator">{{ vid.user_id }}</div>
+            <div class="recommended-video-creator">{{ vid.username }}</div>
             <div class="recommended-video-views">{{ vid.views }} views</div>
           </div>
         </div>
