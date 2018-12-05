@@ -6,48 +6,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class VideoService {
   
-  top5: Object = {
-    most_viewed:[
-      {
-        title:"This is a title",
-        thumb:"https://i.ytimg.com/vi/JIwkF80xBoI/maxresdefault.jpg",
-        creator:"Billy",
-        views:25432
-      },
-      {
-        title:"Title 2",
-        thumb:"https://i.ytimg.com/vi/JIwkF80xBoI/maxresdefault.jpg",
-        creator:"Matt Schultz",
-        views:52462
-      },
-      {
-        title:"Title 2",
-        thumb:"https://i.ytimg.com/vi/JIwkF80xBoI/maxresdefault.jpg",
-        creator:"Matt Schultz",
-        views:52462
-      },
-      {
-        title:"Title 2",
-        thumb:"https://i.ytimg.com/vi/JIwkF80xBoI/maxresdefault.jpg",
-        creator:"Matt Schultz",
-        views:52462
-      },
-      {
-        title:"Title 2",
-        thumb:"https://i.ytimg.com/vi/JIwkF80xBoI/maxresdefault.jpg",
-        creator:"Matt Schultz",
-        views:52462
-      }
-    ]
-  };
-
   constructor(private http:HttpClient) { }
   
   getVideo(id): Observable<Object>{
-    return this.http.get('http://yetube.dockedfiles.com/videos/' + id);
+    return this.http.get('http://yetube.dockedfiles.com:8080/videos/' + id);
   }
 
   getTop5s(): Observable<Object> {
-    return this.http.get('http://yetube.dockedfiles.com/videos');
+    return this.http.get('http://yetube.dockedfiles.com:8080/videos');
+  }
+
+  postRate(videoId, authId, liked): Observable<Object> {
+    return this.http.post('http://yetube.dockedfiles.com:8080/ratings', {videoId:videoId, authId:authId, liked:liked})
   }
 }
