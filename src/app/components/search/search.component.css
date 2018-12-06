@@ -1,5 +1,7 @@
 .video{
   margin-top:1em;
+  cursor:pointer;
+  outline:none;
 }
 .video-info{
   padding-left:1em;

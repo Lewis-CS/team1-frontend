@@ -42,6 +42,7 @@ export class UploadComponent implements OnInit {
         formData3.append('videoId', in_id);
         formData3.append('thumbFile', this.thumbFile, this.thumbFile.name);
         this.http.post(environment.api + '/upload/thumb', formData3).subscribe(res => {
+          f.reset();
           console.log(res)
           console.log("Video upload complete!")
         }, _ => {}, () => this.uploading = false);
