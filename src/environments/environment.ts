@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  api: 'http://yetube.dockedfiles.com:8080',
+  auth: 'http://yetube.dockedfiles.com:4200'
 };
 
 /*

@@ -16,6 +16,7 @@
   flex-basis:19.5%;    
   margin-right:0.5%;
   cursor:pointer;
+  outline:none;
 }
 
 .strip-videos-thumb{
@@ -30,6 +31,7 @@
 }
 
 .strip-videos-creator{
+  outline:none;
   padding:0px 0px 2px 0px;
 }
 .strip-videos-creator, .strip-videos-views{
