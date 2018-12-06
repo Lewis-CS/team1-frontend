@@ -12,6 +12,7 @@ import { AuthorizeComponent } from './components/authorize/authorize.component';
 import { MainComponent } from './components/main/main.component';
 import { ViewComponent } from './components/view/view.component';
 import { UploadComponent } from './components/upload/upload.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UploadComponent } from './components/upload/upload.component';
 	AuthorizeComponent,
 	MainComponent,
 	ViewComponent,
-	UploadComponent
+	UploadComponent,
+	SearchComponent
   ],
   imports: [
     BrowserModule,
