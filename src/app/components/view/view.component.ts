@@ -19,9 +19,15 @@ export class ViewComponent implements OnInit {
   commentss: Object[];
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.videoId = params['id'];
+      this.getRecommended();
+      this.getVideo();
+    });
     this.videoId = this.route.snapshot.params['id'];
     this.getRecommended();
     this.getVideo();
+    console.log(this.auth.profile())
   }
 
   getVideo(): void{
@@ -50,7 +56,7 @@ export class ViewComponent implements OnInit {
   }
   onComment(form): void{
     this.comments.postComment(form.value.comment, this.auth.profile().sub, this.video['video_id']).subscribe(res => {
-      console.log(res);
+      form.reset();
       this.commentss = res;
     });
   }

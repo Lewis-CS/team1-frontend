@@ -15,7 +15,7 @@
       </div>
       <div class="video-info grid bsb">
         <div class="avatar r0 c0">
-          <img alt="Andrew Smith's Avatar" class="avatar" height="40" src="https://secure.gravatar.com/avatar/fbedf600a97738a45fa8ed1e12678e2a?s=40&amp;d=" width="40">
+          <img alt="Avatar" class="avatar" height="40" src="{{ video.picture }}" width="40">
         </div>
         <div class="r0 c1">
           <div class="video-info-user">{{video.username}}</div>
@@ -23,13 +23,16 @@
           <div class="video-info-desc">{{video.description}}</div>
         </div>
       </div>
+      <div class="comment-count">
+        <span>366 Comments</span>
+      </div>
       <div class="video-comments">
         <div *ngIf="auth.isAuthenticated()" class="grid lsb">
           <div class="avatar r0 c0">
-            <img alt="Andrew Smith's Avatar" class="avatar" height="40" src="https://secure.gravatar.com/avatar/fbedf600a97738a45fa8ed1e12678e2a?s=40&amp;d=" width="40">
+            <img alt="Avatar" class="avatar" height="40" src="{{ auth.profile().picture }}" width="40">
           </div>
           <div class="r0 c1">
-            <form #commentForm="ngForm" (ngSubmit)="onComment(commentForm)" autocomplete="off" class="post-comment">
+            <form #commentForm="ngForm" (keydown.enter)="commentForm.submit()" (ngSubmit)="onComment(commentForm)" autocomplete="off" class="post-comment">
               <!--<input autocomplete="false" name="hidden" type="text" style="display:none;">-->
               <input class="comment-input" ngModel required type="text" name="comment" placeholder="Enter your comment">
               <div>
@@ -41,7 +44,19 @@
         </div>
         <div *ngIf="commentss">
         <div *ngFor="let comment of commentss">
-	  {{ comment.comment }}
+
+
+        <div class="comment grid lsb">
+          <div class="avatar r0 c0">
+            <img alt="Avatar" class="avatar" height="40" src="{{ comment.picture }}">
+          </div>
+          <div class="r0 c1">
+            <div class="comment-creator">{{ comment.username }}</div>
+            <div class="comment-text">{{ comment.comment }}</div>
+          </div>
+        </div>
+
+
         </div>
         </div>
       </div>
@@ -49,7 +64,7 @@
     <div class="r0 c1 right-col">
       <div class="recommended-title">Recommended</div>
       <div class="recommended-videos">
-        <div *ngFor="let vid of recommended" class="grid lsb recommended-video">
+        <div *ngFor="let vid of recommended" [routerLink]="['../../view',vid.video_id]" class="grid lsb recommended-video">
           <img class="r0 c0" style="height:94px; width:auto;"  src="http://yetube.dockedfiles.com:8080/uploads/thumbs/{{ vid.thumb_src }}"/>
           <div class="r0 c1" style="width:202px; padding-left:10px;">
             <div class="recommended-video-title">{{ vid.title}}</div>

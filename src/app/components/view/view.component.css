@@ -23,6 +23,7 @@ video {
 .video-rate{
   float:right;
 }
+
 .video-rate button{
   background-color:transparent;
   border:none;
@@ -50,7 +51,7 @@ video {
   border:none;
   outline:none;
   background-color:transparent;
-  border-bottom:2px solid #555;
+  border-bottom:1px solid #999;
   padding:4px 0px;
   margin-bottom:1em;
 }
@@ -67,6 +68,23 @@ video {
   color:#555;
   font-size:0.8em;
 }
+
+.comment-count{
+  font-size:1.1em;
+  margin-top:1em;
+}
+.comment{
+  margin-top:1em;
+}
+
+.comment-creator{
+  font-weight:bold;
+  font-size:0.8em;
+}
+.comment-text{
+  font-size:0.9em;
+}
+
 .avatar{
   margin-right:10px;
 }
@@ -94,6 +112,8 @@ video {
 }
 
 .recommended-video{
+  outline:none;
+  cursor:pointer;
   margin-bottom:10px;
 }
 .recommended-video-title{
