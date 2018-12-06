@@ -65,7 +65,7 @@
       <div class="recommended-title">Recommended</div>
       <div class="recommended-videos">
         <div *ngFor="let vid of recommended" [routerLink]="['../../view',vid.video_id]" class="grid lsb recommended-video">
-0          <img class="r0 c0" style="height:94px; width:167px;"  src="http://yetube.dockedfiles.com:8080/uploads/thumbs/{{ vid.thumb_src }}"/>
+          <img class="r0 c0" style="height:94px; width:167px;"  src="http://yetube.dockedfiles.com:8080/uploads/thumbs/{{ vid.thumb_src }}"/>
           <div class="r0 c1" style="width:202px; padding-left:10px;">
             <div class="recommended-video-title">{{ vid.title}}</div>
             <div class="recommended-video-creator">{{ vid.username }}</div>
