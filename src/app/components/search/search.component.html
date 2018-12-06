@@ -1,3 +1,12 @@
-<p>
-  search works!
-</p>
+<div class="container">
+  <div *ngFor="let vid of searches" class="grid lsb video">
+    <img src="http://yetube.dockedfiles.com:8080/uploads/thumbs/{{ vid.thumb_src }}" class="video-thumb r0 c0">
+    <div class="video-info r0 c1">
+      <div class="video-title">{{ vid.title }}</div>
+      <div class="video-meta">
+        <span>{{ vid.username }} • {{ vid.views }} views • 1 year ago</span>
+      </div>
+      <div class="video-desc">{{ vid.description}}</div>
+    </div>
+  </div>
+</div>

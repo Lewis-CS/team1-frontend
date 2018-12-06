@@ -4,8 +4,8 @@
       <div class="search r0 c1 jc ac">
         <form>
           <div class="grid rsb">  
-	    <input class="r0 c0" type="text"/>
-            <button class="r0 c1">Search</button>
+	    <input class="r0 c0" [(ngModel)]="term" name="term" type="text"/>
+            <button [routerLink]="['/search']" [queryParams]="{term: term}" class="r0 c1">Search</button>
           </div>  
         </form>
       </div>

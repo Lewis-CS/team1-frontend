@@ -1,0 +1,23 @@
+.video{
+  margin-top:1em;
+}
+.video-info{
+  padding-left:1em;
+}
+.video-thumb{
+  width:246px;
+  height:138px;
+}
+.video-title{
+  font-size:1.1em;
+}
+.video-meta{
+ padding-top:0.2em;
+}
+.video-desc{
+ padding-top:1em;
+}
+.video-meta, .video-desc{
+  font-size:0.8em;
+  color:#555;
+}

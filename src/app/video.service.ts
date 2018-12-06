@@ -14,6 +14,11 @@ export class VideoService {
     return this.http.get(environment.api + '/videos/' + id);
   }
 
+  getSearch(term: string): Observable<Object>{
+    console.log(term)
+    return this.http.get(environment.api + '/videos/search?term=' + term);
+  }
+ 
   getNewlyAdded(): Observable<Object>{
     return this.http.get(environment.api + '/videos/filter/new');
   }
