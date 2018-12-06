@@ -13,6 +13,7 @@ export class UploadComponent implements OnInit {
   
   videoFile:File;
   thumbFile:File;
+  uploading: boolean = false;
 
   constructor(private auth: AuthService, private http: HttpClient) {
   }
@@ -21,6 +22,7 @@ export class UploadComponent implements OnInit {
   }
 
   onSubmit(f: NgForm): void{
+    this.uploading = true;
     let user_id = this.auth.profile().sub;
     const formData = new FormData();
     formData.append('userId', user_id);
@@ -42,9 +44,9 @@ export class UploadComponent implements OnInit {
         this.http.post(environment.api + '/upload/thumb', formData3).subscribe(res => {
           console.log(res)
           console.log("Video upload complete!")
-        });
-      });
-    });    
+        }, _ => {}, () => this.uploading = false);
+      }, _ => this.uploading = false);
+    }, _ => this.uploading = false);    
 
 
     console.log(this.videoFile)

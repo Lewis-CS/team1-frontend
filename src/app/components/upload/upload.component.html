@@ -1,9 +1,31 @@
 <div class="container">
-  <form #uploadForm="ngForm" (ngSubmit)="onSubmit(uploadForm)">
-    <input type="file" ngModel required (change)="onVideo($event.target.files)" name="videoFile" accept=".mp4">
-    <input type="file" ngModel required (change)="onThumb($event.target.files)" name="thumbFile" accept=".jpg,.jpeg,.png">
-    <input type="text" ngModel required name="videoTitle">
-    <textarea ngModel name="videoDescription"></textarea>
-    <button type="submit">Upload</button>
+  <div class="upload-form">
+    <div>
+      <h1>Create a Video</h1>
+    </div>
+  <div *ngIf="uploading" class="grid rc1 cc1">
+    <span>Video is uploading!</span>
+  </div>
+  <form *ngIf="!uploading" #uploadForm="ngForm" autocomplete="Off" (ngSubmit)="onSubmit(uploadForm)">
+    <div class="grid lsb">
+      <label for="videoTitle" class="r0 c0">Title</label>
+      <input class="r0 c1" type="text" ngModel required id="videoTitle" name="videoTitle">
+    </div>
+    <div class="grid lsb">
+      <label for="videoFile" class="r0 c0">Video File</label>
+      <input class="r0 c1" type="file" ngModel required (change)="onVideo($event.target.files)" id="videoFile" name="videoFile" accept=".mp4,.ogg,.webm">
+    </div>
+    <div class="grid lsb">
+      <label for="thumbFile" class="r0 c0">Thumbnail File</label>
+      <input class="r0 c1" type="file" ngModel required (change)="onThumb($event.target.files)" id="thumbFile" name="thumbFile" accept=".jpg,.jpeg,.png">
+    </div>
+    <div class="grid lsb">
+      <label for="videoDescription" class="r0 c0">Description</label>
+      <textarea class="r0 c1" ngModel id="videoDescription" name="videoDescription"></textarea>
+    </div>
+    <div class="grid rc1 cc1">
+      <button class="r0 c0" type="submit">Upload</button>
+    </div>
   </form>
+  </div>
 </div>

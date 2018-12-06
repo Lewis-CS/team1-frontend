@@ -1,0 +1,15 @@
+
+.upload-form{
+  background-color:#fff;
+  padding:1.5em;
+  margin:1.5em auto;
+  width:500px;
+  border-radius:3px;
+}
+.upload-form label{
+ width:120px;
+}
+
+.upload-form > form > div:not(:last-child){
+  margin-bottom:1em;
+}
