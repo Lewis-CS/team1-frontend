@@ -46,7 +46,7 @@ export class ViewComponent implements OnInit {
   }
 
   getRecommended(): void{
-    this.videos.getTop5s().subscribe(vid => this.recommended = vid);    
+    this.videos.getMostViewed().subscribe(vid => this.recommended = vid);    
   }
   
   getComments(): void{

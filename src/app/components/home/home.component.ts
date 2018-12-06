@@ -8,7 +8,7 @@ import { VideoService } from '../../video.service';
 })
 export class HomeComponent implements OnInit {
 
-  data: Object;
+  data: Object = {};
 
   constructor(private videos: VideoService) { }
 
@@ -17,7 +17,9 @@ export class HomeComponent implements OnInit {
   }
 
   getTop5s(): void{
-    this.videos.getTop5s().subscribe(vids => this.data = vids);
+    this.videos.getMostViewed().subscribe(vids => this.data['most_viewed'] = vids);
+    this.videos.getTopRated().subscribe(vids => this.data['top_rated'] = vids);
+    this.videos.getNewlyAdded().subscribe(vids => this.data['newly_added'] = vids);
   }
 }
 

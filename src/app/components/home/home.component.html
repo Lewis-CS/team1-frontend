@@ -3,8 +3,8 @@
     <div class="strip-title">
       <span>Top Rated</span>
     </div>
-    <div class="strip-videos" *ngIf="data">
-      <div *ngFor="let vid of data" class="{{vid.video_id}}" [routerLink]="['view', vid.video_id]">
+    <div class="strip-videos" *ngIf="data.top_rated">
+      <div *ngFor="let vid of data.top_rated | slice:0:5" class="{{vid.video_id}}" [routerLink]="['view', vid.video_id]">
         <img class="strip-videos-thumb" src="http://yetube.dockedfiles.com:8080/uploads/thumbs/{{ vid.thumb_src }}">
         <div class="strip-videos-title">{{ vid.title }}</div>
         <div class="strip-videos-creator" routerLink="/view/{{data.video_id}}">{{ vid.username }}</div>
@@ -17,8 +17,8 @@
     <div class="strip-title">
       <span>Most Viewed</span>
     </div>
-    <div class="strip-videos" *ngIf="data">
-      <div *ngFor="let vid of data">
+    <div class="strip-videos" *ngIf="data.most_viewed">
+      <div *ngFor="let vid of data.most_viewed | slice:0:5">
         <img class="strip-videos-thumb" src="http://yetube.dockedfiles.com:8080/uploads/thumbs/{{ vid.thumb_src }}">
         <div class="strip-videos-title">{{ vid.title }}</div>
         <div class="strip-videos-creator">{{ vid.username }}</div>
@@ -31,8 +31,8 @@
     <div class="strip-title">
       <span>Newly Added</span>
     </div>
-    <div class="strip-videos" *ngIf="data">
-      <div *ngFor="let vid of data">
+    <div class="strip-videos" *ngIf="data.newly_added">
+      <div *ngFor="let vid of data.newly_added | slice:0:5">
         <img class="strip-videos-thumb" src="http://yetube.dockedfiles.com:8080/uploads/thumbs/{{ vid.thumb_src }}">
         <div class="strip-videos-title">{{ vid.title }}</div>
         <div class="strip-videos-creator">{{ vid.username }}</div>

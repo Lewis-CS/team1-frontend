@@ -14,8 +14,14 @@ export class VideoService {
     return this.http.get(environment.api + '/videos/' + id);
   }
 
-  getTop5s(): Observable<Object> {
-    return this.http.get(environment.api + '/videos');
+  getNewlyAdded(): Observable<Object>{
+    return this.http.get(environment.api + '/videos/filter/new');
+  }
+  getTopRated(): Observable<Object>{
+    return this.http.get(environment.api + '/videos/filter/ratings');
+  }
+  getMostViewed(): Observable<Object>{
+    return this.http.get(environment.api + '/videos/filter/views');
   }
 
   postRate(videoId, authId, liked): Observable<Object> {
